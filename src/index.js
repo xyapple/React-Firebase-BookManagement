@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar'
 
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import './App.css'
 
 //import * as firebase from 'firebase';
 

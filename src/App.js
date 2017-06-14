@@ -6,7 +6,7 @@ import GifList from './components/GifList';
 
 //AJAX and API library
 import request from 'superagent';
-
+import './App.css'
 class App extends Component {
 
   constructor(){
