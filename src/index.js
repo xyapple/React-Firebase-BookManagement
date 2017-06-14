@@ -21,6 +21,7 @@ import * as firebase from 'firebase';
  };
  firebase.initializeApp(config);
 
+
  ReactDOM.render(
    <App />,
    document.getElementById('root'));
