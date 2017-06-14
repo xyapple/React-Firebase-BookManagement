@@ -3,28 +3,45 @@ import './App.css';
 //import * as firebase from 'firebase';
 import SearchBar from './components/SearchBar';
 import GifList from './components/GifList';
+import GifModal from './components/GifModal';
 
 //AJAX and API library
 import request from 'superagent';
 import './App.css'
-class App extends Component {
 
+
+class App extends Component {
   constructor(){
     super();
     this.state ={
-      gifs:[]
+      gifs:[],
+      //after install the react-modal
+      selectedGif: null,
+      modalIsOpen: false
     };
 
     this.handleTermChange = this.handleTermChange.bind(this)
   }
-
-handleTermChange(term){
-  const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
-
-    request.get(url, (err, res) => {
-        this.setState({ gifs: res.body.data })
+  openModal(gif){
+    this.setState({
+      modalIsOpen: true,
+      selectedGif: gif
     });
   }
+  closeModal(){
+    this.setState({
+      modalIsOpen: false,
+      selectedGif: null
+    })
+  }
+
+    handleTermChange(term){
+      const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
+
+        request.get(url, (err, res) => {
+            this.setState({ gifs: res.body.data })
+        });
+      }
 
 // componentDidMount(){
 //   const rootRef = firebase.database().ref().child('react');
@@ -41,7 +58,11 @@ handleTermChange(term){
       <div className="App">
         <div>
           <SearchBar onTermChange={term => this.handleTermChange(term)}/>
-          <GifList gifs={this.state.gifs}/>
+          <GifList gifs={this.state.gifs}
+                  onGifSelect={selectedGif => this.openModal(selectedGif)}/>
+          <GifModal modalIsOpen={this.state.modalIsOpen}
+                    selectedGif={this.state.selectedGif}
+                    onRequestClose={()=>this.closeModal()}/>
         </div>
 
       </div>
