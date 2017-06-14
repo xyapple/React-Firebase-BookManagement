@@ -1,7 +1,7 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  
+
   constructor(){
     super();
     this.state = {book:''}
@@ -9,8 +9,7 @@ class SearchBar extends React.Component {
   onInputChange(book){
 
     this.setState({book});
-
-    this.props.onBookChange(book);
+    this.props.onTermChange(book);
 
   }
 

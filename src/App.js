@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase';
 import SearchBar from './components/SearchBar';
-
+import BookList from './components/BookList';
 
 class App extends Component {
 
@@ -95,8 +95,8 @@ handleBookChange(book){
     return (
       <div className="App">
         <div>
-          <SearchBar onTeChange={this.handleBookChange}/>
-          <h1>{this.state.speed}</h1>
+          <SearchBar onTermChange={this.handleBookChange}/>
+          <BookList books={this.state.books}/>
         </div>
 
       </div>
