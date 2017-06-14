@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase';
+import SearchBar from './components/SearchBar';
+
+
 class App extends Component {
 
   constructor(){
@@ -9,6 +12,11 @@ class App extends Component {
       speed:10
     }
   }
+
+handleBookChange(book){
+    console.log(book)
+  }
+
  componentDidMount(){
    const rootRef = firebase.database().ref().child('react');
    const speedRef = rootRef.child('speed');
@@ -23,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <h2>Welcome to React</h2>
+          <SearchBar onBookChange={this.handleBookChange}/>
           <h1>{this.state.speed}</h1>
         </div>
 

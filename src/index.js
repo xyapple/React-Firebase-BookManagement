@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import App from './App';
+import SearchBar from './components/SearchBar'
+
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+
 import * as firebase from 'firebase';
 
 //Copy and pased this from Firebase as soon as I create a project
@@ -17,8 +21,8 @@ import * as firebase from 'firebase';
  };
  firebase.initializeApp(config);
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'));
+ ReactDOM.render(
+   <App />,
+   document.getElementById('root'));
 
 registerServiceWorker();
