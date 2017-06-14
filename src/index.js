@@ -7,11 +7,11 @@ import SearchBar from './components/SearchBar'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 //Copy and pased this from Firebase as soon as I create a project
 // Initialize Firebase
- var config = {
+/** var config = {
    apiKey: "AIzaSyBjY0irAZPCthbtdGNyntX8vwYXwRRO0oE",
    authDomain: "fir-react-test-afd75.firebaseapp.com",
    databaseURL: "https://fir-react-test-afd75.firebaseio.com",
@@ -20,7 +20,7 @@ import * as firebase from 'firebase';
    messagingSenderId: "883869264096"
  };
  firebase.initializeApp(config);
-
+*/
 
  ReactDOM.render(
    <App />,
