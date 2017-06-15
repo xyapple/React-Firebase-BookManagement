@@ -27,6 +27,7 @@ import configureStore from './store/configureStore';
  };
  firebase.initializeApp(config);
 */
+const store = configureStore();
 
  ReactDOM.render(
    <Provider store={store}>

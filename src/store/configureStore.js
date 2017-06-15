@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 
-expord default function configureStore(initialState){
+export default function configureStore(initialState){
   // Redux's createStore function to create store and passed the rootReducer
   const store = createStore(
     rootReducer,

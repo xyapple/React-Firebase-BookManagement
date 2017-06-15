@@ -9,4 +9,4 @@ const rootReducer = combineReducers({
   gifs: GifsReducer
 });
 
-expord default rootReducer;
+export default rootReducer;

@@ -1,4 +1,4 @@
-expord default function(){
+export default function(){
   return [
     {
      id: 1,
