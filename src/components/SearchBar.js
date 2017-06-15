@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
   render(){
     return (
       <div className='search'>
-        <input type='text' onChange={even => this.onInputChange(even.target.value)}/>
+        <input type='text' placeholder="Enter text to search for gifs!" onChange={even => this.onInputChange(even.target.value)}/>
       </div>
     )
   }
