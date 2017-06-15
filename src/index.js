@@ -7,6 +7,11 @@ import SearchBar from './components/SearchBar'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
+/**We're finally creating our store by calling
+*the configureStore() method we set up in src/store/configureStore.js
+*/
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
 
 //import * as firebase from 'firebase';
 
@@ -24,7 +29,10 @@ import './index.css';
 */
 
  ReactDOM.render(
-   <App />,
+   <Provider store={store}>
+        <App />
+   </Provider>,
+
    document.getElementById('root'));
 
 registerServiceWorker();
