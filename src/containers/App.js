@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 //import * as firebase from 'firebase';
-import SearchBar from './components/SearchBar';
-import GifList from './components/GifList';
-import GifModal from './components/GifModal';
+import SearchBar from '../components/SearchBar';
+import GifList from '../components/GifList';
+import GifModal from '../components/GifModal';
 
 //AJAX and API library
 import request from 'superagent';

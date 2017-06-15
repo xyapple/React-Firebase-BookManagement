@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './containers/App';
 import SearchBar from './components/SearchBar'
 
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import './App.css'
+
 
 //import * as firebase from 'firebase';
 
