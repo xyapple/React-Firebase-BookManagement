@@ -8,7 +8,7 @@ import ModalReducer from './modal';
 
 
 const rootReducer = combineReducers({
-  gifs: GifsReducer
+  gifs: GifsReducer,
   modal:ModalReducer
 });
 
