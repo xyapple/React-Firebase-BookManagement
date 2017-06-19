@@ -9,7 +9,7 @@ export default function configureStore(initialState){
     initialState,
     compose(
       applyMiddleware(ReduxPromise),
-      window.devToolsExtension ? window.devToolsExtension(): f=>f
+      window.devToolsExtension ? window.devToolsExtension():undefined
     )
     //allow the Redux Dev Tools Chrome extension to access our store
     //window.devToolsExtension ? window.devToolsExtension():undefined

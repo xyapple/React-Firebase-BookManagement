@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import SearchBar from '../components/SearchBar';
+import GifList from '../components/GifList';
 
 //AJAX and API library
 // import request from 'superagent';
@@ -84,13 +85,14 @@ class App extends React.Component {
     return (
       <div>
       <SearchBar onTermChange={this.props.actions.requestGifs} />
+      <GifList gifs={ this.props.gifs } />
       </div>
     );
   }
 }
 function mapStateToProps(state){
   return{
-    gifs: state.gifs
+    gifs: state.gifs.data
   };
 }
 
