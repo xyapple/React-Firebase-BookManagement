@@ -12,7 +12,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import SearchBar from '../components/SearchBar';
 import GifList from '../components/GifList';
-
+import GifModal from '../components/GifModal';
 //AJAX and API library
 // import request from 'superagent';
 import './App.css'
@@ -85,14 +85,19 @@ class App extends React.Component {
     return (
       <div>
       <SearchBar onTermChange={this.props.actions.requestGifs} />
-      <GifList gifs={ this.props.gifs } />
+      <GifList gifs={ this.props.gifs } onGifSelect={ selectedGif => this.props.actions.openModal({selectedGif}) } />
+       <GifModal modalIsOpen={ this.props.modalIsOpen }
+                 selectedGif={ this.props.selectedGif }
+                 onRequestClose={ () => this.props.actions.closeModal() } />
       </div>
     );
   }
 }
 function mapStateToProps(state){
   return{
-    gifs: state.gifs.data
+    gifs: state.gifs.data,
+    modalIsOpen: state.modal.modalIsOpen,
+    selectedGif: state.modal.selectedGif
   };
 }
 
